@@ -17,8 +17,11 @@ C_BASE_FLAGS = [
         '-std=c11',
         '-I/usr/lib/',
         '-I/usr/include/',
+        '-I/usr/include/python3.9',
         '-I./headers',
-        '-I./genHeaders'
+        '-I../headers',
+        '-I./genHeaders',
+        '-I../genHeaders'
         ]
 
 CPP_BASE_FLAGS = [
@@ -33,8 +36,11 @@ CPP_BASE_FLAGS = [
         '-xc++',
         '-I/usr/lib/',
         '-I/usr/include/',
+        '-I/usr/include/python3.9',
         '-I./headers',
-        '-I./genHeaders'
+        '-I../headers',
+        '-I./genHeaders',
+        '-I../genHeaders'
         ]
 
 C_SOURCE_EXTENSIONS = [

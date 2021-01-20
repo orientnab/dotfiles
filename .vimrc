@@ -9,8 +9,9 @@
 
   call plug#begin()
     Plug 'morhetz/gruvbox'
-    " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --rust-completer' }
-    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --rust-completer' }
+    " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-unimpaired'     " Some useful mappings in vim [e, [<space>, [b, [u, [x, etc
@@ -41,7 +42,7 @@
     Plug 'rust-lang/rust.vim'
     Plug 'cespare/vim-toml', { 'for': 'toml' }
     Plug 'ron-rs/ron.vim', { 'for': 'ron' }
-    Plug 'ycm-core/lsp-examples', { 'do': './install.py --enable-rust' }
+    " Plug 'ycm-core/lsp-examples', { 'do': './install.py --enable-rust' }
     Plug 'lark-parser/vim-lark-syntax', { 'for': 'lark' }
     " Code Formatting
     Plug 'google/vim-maktaba'
@@ -62,6 +63,12 @@
   endif
 
   " filetype plugin indent on
+
+" Vimdiff
+  if &diff
+    " Ignore whitespace
+    set diffopt+=iwhite
+  endif
 
 " Colors and colorschemes
   if has('syntax') && !exists('g:syntax_on')
@@ -87,10 +94,10 @@
   set splitright
 
 " Whitespace and indentation
-  set tabstop=2           " 2 space tab
+  set tabstop=4           " 2 space tab
   set expandtab           " use spaces for tabs
-  set softtabstop=2       " 2 space tab
-  set shiftwidth=2        " space when using >> and <<
+  set softtabstop=4       " 2 space tab
+  set shiftwidth=4        " space when using >> and <<
   set smarttab            " uses shiftwidth when using tab at the beggining of lines
   set autoindent
   set backspace=indent,eol,start
@@ -166,6 +173,7 @@
 
 " Comments
   autocmd FileType cpp setlocal commentstring=//\ %s
+  autocmd BufRead,BufNewFile *.h setlocal commentstring=/*%s*/
 
 " Folding
   set foldenable          " enable folding
@@ -192,6 +200,7 @@
   let g:ycm_global_ycm_extra_conf = '~/projects/.ycm_extra_conf.py'
   nmap <silent> <Leader>x :YcmCompleter FixIt<CR>
   nmap <leader>gt  :YcmCompleter GoTo<CR>
+  nmap <leader>ge  :YcmShowDetailedDiagnostic<CR>
   " let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
   let g:ycm_key_list_stop_completion = ['<C-y>']
   let g:ycm_key_list_select_completion = ['<C-n>', '<Down>', '<tab>']
@@ -207,7 +216,7 @@
   "       \     'project_root_files': ['Cargo.toml']
   "       \   }
   "       \ ]
-  source /home/nabs/.vim/plugged/lsp-examples/vimrc.generated
+  " source /home/nabs/.vim/plugged/lsp-examples/vimrc.generated
 
 " UltiSnips
   " let g:UltiSnipsExpandTrigger="<c-b>"

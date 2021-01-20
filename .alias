@@ -9,6 +9,8 @@ alias cl="clear"
 # alias ll="ls -hl --group-directories-first"
 alias ll="exa -l --group-directories-first --sort=extension"
 
+alias bat="bat --theme=gruvbox"
+
 alias view="vim -R"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
