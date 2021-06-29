@@ -134,6 +134,10 @@
     set sidescrolloff=5
   endif
 
+  " Map mouse wheel to scroll
+  nmap <Down> <C-e>
+  nmap <Up> <C-y>
+
   set modelines=1         " Reads the commented line at the end of the file (default=5)
 
 " Directory explorer
@@ -199,7 +203,8 @@
   let g:ycm_confirm_extra_conf = 0      " Not asking for .ycm_extra_conf.py on start
   let g:ycm_global_ycm_extra_conf = '~/projects/.ycm_extra_conf.py'
   nmap <silent> <Leader>x :YcmCompleter FixIt<CR>
-  nmap <leader>gt  :YcmCompleter GoTo<CR>
+  nmap <leader>gt  :YcmCompleter GoToDefinition<CR>
+  nmap <leader>gd  :YcmCompleter GoToDefinition<CR>
   nmap <leader>ge  :YcmShowDetailedDiagnostic<CR>
   " let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
   let g:ycm_key_list_stop_completion = ['<C-y>']
@@ -224,7 +229,7 @@
   let g:UltiSnipsJumpForwardTrigger='<c-b>'
 
 " FZF
-  let g:fzf_layout = { 'down': '~20%' }
+  let g:fzf_layout = { 'down': '~50%' }
   function! s:find_git_root()
     return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
   endfunction

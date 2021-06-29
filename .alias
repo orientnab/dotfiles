@@ -9,7 +9,7 @@ alias cl="clear"
 # alias ll="ls -hl --group-directories-first"
 alias ll="exa -l --group-directories-first --sort=extension"
 
-alias bat="bat --theme=gruvbox"
+# alias bat="bat --theme=gruvbox-dark"
 
 alias view="vim -R"
 

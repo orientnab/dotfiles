@@ -9,7 +9,8 @@ export ARCHFLAGS="-arch x86_64"
 # Default programs
 export EDITOR="vim"
 export TERMINAL="konsole"
-export BROWSER="chromium"
+# export BROWSER="chromium"
+export BROWSER="google-chrome-stable"
 export READER="zathura"
 
 # Directories
@@ -23,3 +24,4 @@ export LS_COLORS
 
 export EXA_COLORS="ur=0;38:uw=0;38:ux=0;38:ue=0;38:gr=0;38:gw=0;38:gx=0;38:tr=0;38:tw=0;38:tx=0;38:su=0;38:sf=0;38:xa=0;38:"
 
+export BAT_THEME="gruvbox-dark"
